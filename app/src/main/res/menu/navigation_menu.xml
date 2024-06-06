@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+
+        android:icon="@drawable/baseline_home_filled_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/notifications"
+
+        android:icon="@drawable/baseline_music_note_24"
+        android:title="Songs" />
+
+    <item
+        android:id="@+id/settings"
+
+        android:icon="@drawable/baseline_image_24"
+        android:title="Pager" />
+</menu>
