@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -13,7 +14,9 @@ import com.example.views_example.R
 import com.example.views_example.data.entity.SongInfos
 import com.google.android.material.card.MaterialCardView
 
-class SongListAdapter : ListAdapter<SongInfos, SongListAdapter.SongViewHolder>(SongDiffUtil()) {
+
+class SongListAdapter :
+    PagingDataAdapter<SongInfos, SongListAdapter.SongViewHolder>(SongDiffUtil()) {
     inner class SongViewHolder(view: View) : ViewHolder(view) {
 
         private val cardView: MaterialCardView = view.findViewById(R.id.cv_songCard)
@@ -39,7 +42,12 @@ class SongListAdapter : ListAdapter<SongInfos, SongListAdapter.SongViewHolder>(S
     }
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
-        holder.bind(currentList[position])
+        getItem(position)?.let {
+            holder.bind(
+                it
+            )
+        }
+
     }
 }
 

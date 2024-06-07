@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
+        android:id="@+id/bi_cardContentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_beerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beer TItle" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_beerLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_beerTitle"
+            android:text="Address" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_beerType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_beerLocation"
+            android:text="Beer Type" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

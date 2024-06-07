@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.Home">
+    tools:context=".presentation.fragments.home.Home">
 
 
-    <TextView
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Fragment"
 
+        android:layout_height="match_parent">
 
-        />
-
-</FrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_beersRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/beers_list_item" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+<com.facebook.shimmer.ShimmerFrameLayout
+    android:id="@+id/shimmerLayout"
+    android:layout_width="match_parent"
+    android:visibility="gone"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_shimmer_list_item"/>
+        <include layout="@layout/layout_shimmer_list_item"/>
+        <include layout="@layout/layout_shimmer_list_item"/>
+        <include layout="@layout/layout_shimmer_list_item"/>
+        <include layout="@layout/layout_shimmer_list_item"/>
+        <include layout="@layout/layout_shimmer_list_item"/>
+    </LinearLayout>
+</com.facebook.shimmer.ShimmerFrameLayout>
+</RelativeLayout>

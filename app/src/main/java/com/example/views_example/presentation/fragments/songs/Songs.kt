@@ -23,7 +23,7 @@ class Songs : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSongsBinding.inflate(inflater, container, false)
         setViews()
@@ -41,8 +41,9 @@ class Songs : Fragment() {
 
     private fun collectState() {
         lifecycleScope.launch {
-            viewModel.songsList.collectLatest {
-                songAdapter.submitList(it)
+            viewModel.songsPagingFlow.collectLatest {
+                songAdapter.submitData(it)
+
             }
         }
     }

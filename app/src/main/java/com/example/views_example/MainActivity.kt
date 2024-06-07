@@ -2,6 +2,7 @@ package com.example.views_example
 
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -28,10 +29,14 @@ class MainActivity : AppCompatActivity() {
 //        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navHostController = navHostFragment.navController
         setSupportActionBar(binding.topBarMain)
+        navHostController.addOnDestinationChangedListener { controller, destination, arguments ->
+            binding.tvTopBarText.text = destination.label
+        }
         menuIcon = findViewById(R.id.menuIcon)
         bottomNavigationView = binding.bottomNavigationView
         bottomNavigationView.setupWithNavController(navHostController)
