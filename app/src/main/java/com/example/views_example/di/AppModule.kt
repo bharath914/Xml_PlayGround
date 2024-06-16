@@ -2,6 +2,7 @@ package com.example.views_example.di
 
 import androidx.room.Room
 import com.example.views_example.data.repo.SongsRepo
+import com.example.views_example.data.repo.TaxReportsRepository
 import com.example.views_example.data.source.BeersPagingSourceMediator
 import com.example.views_example.data.source.LocalMusicSource
 import com.example.views_example.data.source.SongsPagingSource
@@ -44,4 +45,7 @@ val appModule = module {
         BeersPagingSourceMediator(get(), get())
     }
 
+    single {
+        TaxReportsRepository()
+    }
 }

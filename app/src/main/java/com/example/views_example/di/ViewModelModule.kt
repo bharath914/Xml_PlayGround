@@ -1,5 +1,6 @@
 package com.example.views_example.di
 
+import com.example.views_example.presentation.fragments.expandableCards.ReportsViewModel
 import com.example.views_example.presentation.fragments.home.HomeViewModel
 import com.example.views_example.presentation.fragments.pager.PagerViewModel
 import com.example.views_example.presentation.fragments.songs.SongViewModel
@@ -10,4 +11,5 @@ val viewModelsModule = module {
     viewModelOf(::PagerViewModel)
     viewModelOf(::SongViewModel)
     viewModelOf(::HomeViewModel)
+    viewModelOf(::ReportsViewModel)
 }

@@ -25,4 +25,10 @@
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
     </fragment>
+    <fragment
+        android:id="@+id/reports"
+        android:name="com.example.views_example.presentation.fragments.expandableCards.ReportsScreen"
+        android:label="fragment_expandable_cards"
+        tools:layout="@layout/fragments_reports" />
+
 </navigation>

@@ -17,4 +17,8 @@
 
         android:icon="@drawable/baseline_image_24"
         android:title="Pager" />
+    <item
+        android:id="@+id/reports"
+        android:icon="@drawable/baseline_reports"
+        android:title="Reports" />"
 </menu>

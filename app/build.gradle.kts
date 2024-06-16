@@ -85,4 +85,5 @@ dependencies {
 
 
     implementation(libs.androidx.core.animation)
+    implementation(libs.androidx.transition.ktx)
 }
