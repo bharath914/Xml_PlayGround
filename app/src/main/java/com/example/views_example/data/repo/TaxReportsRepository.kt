@@ -31,6 +31,25 @@ class TaxReportsRepository {
                     ReportItem("Credit Notes"),
                     ReportItem("Debit Notes")
                 )
+            ),
+            Reports(
+                "Bill-Wise Item Reports",
+                listOf(
+                    ReportItem("Sales"),
+                    ReportItem("Purchases"),
+                    ReportItem("Estimates"),
+                    ReportItem("Delivery Challans"),
+                    ReportItem("Pro Forma Invoices"),
+                    ReportItem("Purchase Orders")
+                )
+            ),
+            Reports(
+                "Item Reports", listOf(
+                    ReportItem("Stock Summary"),
+                    ReportItem("Item-wise discount"),
+                    ReportItem("Stock Value"),
+                    ReportItem("Inventory Timeline"),
+                )
             )
         )
     }

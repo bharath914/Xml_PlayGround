@@ -53,21 +53,21 @@ class ReportsAdapter :
     }
 
     private fun expandView(view: View, button: ImageView) {
-        view.measure(
-            View.MeasureSpec.makeMeasureSpec(view.width, View.MeasureSpec.EXACTLY),
-            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
-        )
-        val targetHeight = view.measuredHeight
-        view.layoutParams.height = 0
+//        view.measure(
+//            View.MeasureSpec.makeMeasureSpec(view.width, View.MeasureSpec.EXACTLY),
+//            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+//        )
+//        val targetHeight = view.measuredHeight
+//        view.layoutParams.height = 0
         view.visibility = View.VISIBLE
-        val animator = ValueAnimator.ofInt(1, targetHeight)
-        animator.addUpdateListener { animation ->
-            val value = animation.animatedValue as Int
-            view.layoutParams.height = value
-            view.requestLayout()
-        }
-        animator.duration = 400
-        animator.start()
+//        val animator = ValueAnimator.ofInt(1, targetHeight)
+//        animator.addUpdateListener { animation ->
+//            val value = animation.animatedValue as Int
+//            view.layoutParams.height = value
+//            view.requestLayout()
+//        }
+//        animator.duration = 400
+//        animator.start()
         val fadeIn = AnimationUtils.loadAnimation(view.context, R.anim.fade_in)
         view.startAnimation(fadeIn)
 
